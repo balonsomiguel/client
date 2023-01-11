@@ -1,0 +1,19 @@
+.card-producto {
+    cursor: pointer;
+}
+
+.card-producto:hover {
+    border: 1px solid #333;
+}
+
+.contenedor{
+    height: 49%;
+    /* background-color: #6A737C; */
+    margin: 1% 1%;
+  }
+
+.contenedor1{
+    height: 49%;
+    /* background-color: #6A737C; */
+    margin-left: 40%;
+  }

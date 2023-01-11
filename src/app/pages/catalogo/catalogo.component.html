@@ -1,0 +1,50 @@
+<div style="text-align:center;">
+    <h1>Catálogo</h1>
+</div>
+<div style="text-align:center;">
+    <h2>Crear Atributos</h2>
+</div>
+<div class="contenedor1">
+    <div class="row">
+        <form (submit)="registrarProducto()">
+            <div class="form-row">
+                <div class="form-group ">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" [(ngModel)]="producto.name" class="form-control" name="name"  id="inputEmail4" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group ">
+                    <label for="inputPassword4">Valor</label>
+                    <input type="text" [(ngModel)]="producto.value" class="form-control" name="type" id="inputPassword4" placeholder="Valor">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group ">
+                    <label for="inputDescription">Descripcion</label>
+                    <input type="text" [(ngModel)]="producto.description" class="form-control" name="type" id="inputDescription" placeholder="Descripcion">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</div>
+<div style="text-align:center;">
+    <h2>Lista Productos</h2>
+</div>
+<div class="row">
+    <div class="col-md-4 p-4" *ngFor="let producto of productos" style="text-align:center;">
+        <div class="card card-producto" (click)="selectedCard(producto.id)">
+            <div class="card-header">
+                {{producto.id}}.{{producto.name}}
+            </div>
+            <!-- <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"> -->
+            <div class="card-body">
+                <p>{{producto.value}}</p>
+            </div>
+            <div class="card-body">
+                <p>{{producto.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

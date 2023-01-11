@@ -1,0 +1,67 @@
+
+<body>
+    <div style="text-align:center;">
+        <h1>Selección de Atributos</h1>
+    </div>
+    <div style="text-align:center;">
+        <h2>Producto</h2>
+    </div>
+    <div class="contenedor1">
+        <div class="row center-block" style="text-align:center;">
+            <div class="col-md-4"  style="text-align:center;">
+                <div class="card card-carrito" (click)="selectedCard(producto.id)">
+                    <div class="card-header">
+                        {{producto.id}}.{{producto.name}}
+                    </div>
+                    <!-- <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"> -->
+                    <div class="card-body">
+                        <p>{{producto.value}}</p>
+                    </div>
+                    <div class="card-body">
+                        <p>{{producto.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <h2>Crear Atributos</h2>
+    </div>
+    <div class="contenedor1">
+        <div class="row">
+            <form (submit)="registrarAtributo()">
+                <div class="form-row">
+                <div class="form-group ">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" [(ngModel)]="atributo.name" class="form-control" name="name"  id="inputEmail4" placeholder="Nombre">
+                </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group ">
+                        <label for="inputPassword4">Tipo</label>
+                        <input type="text" [(ngModel)]="atributo.type" class="form-control" name="type" id="inputPassword4" placeholder="Tipo">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <h2>Lista Atributos</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4 p-4" *ngFor="let atributo of atributos" style="text-align:center;">
+            <div class="card card-atributo" (click)="selectedCard(atributo.id)">
+                <div class="card-header">
+                    {{atributo.id}}.{{atributo.name}}
+                </div>
+                <!-- <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"> -->
+                <div class="card-body">
+                    <p>{{atributo.type}}</p>
+                    <input type="checkbox" (change)="onAtributoPressed(atributo,$event)" class="form-checkbox h-5 w-5 text-indigo-600">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="continuar()">Continuar</button>
+    </div>
+</body>

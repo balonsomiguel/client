@@ -1,0 +1,44 @@
+
+<body>
+    <div style="text-align:center;">
+        <h1>Carrito</h1>
+    </div>
+    <div style="text-align:center;">
+        <h2>Producto</h2>
+    </div>
+    <div class="contenedor1">
+        <div class="row center-block" style="text-align:center;">
+            <div class="col-md-4"  style="text-align:center;">
+                <div class="card card-carrito" (click)="selectedCard(producto.id)">
+                    <div class="card-header">
+                        {{producto.id}}.{{producto.name}}
+                    </div>
+                    <!-- <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"> -->
+                    <div class="card-body">
+                        <p>{{producto.value}}</p>
+                    </div>
+                    <div class="card-body">
+                        <p>{{producto.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <h2>Atributos</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4 p-4" *ngFor="let atributo of atributos" style="text-align:center;">
+            <div class="card card-atributo" (click)="selectedCard(atributo.id)">
+                <div class="card-header">
+                    {{atributo.id}}.{{atributo.name}}
+                </div>
+                <!-- <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"> -->
+                <div class="card-body">
+                    <p>{{atributo.type}}</p>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="continuar()">Continuar</button>
+    </div>
+</body>

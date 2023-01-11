@@ -1,0 +1,23 @@
+.card-atributo {
+    cursor: pointer;
+}
+
+.card-atributo:hover {
+    border: 1px solid #333;
+}
+
+.contenedor{
+    height: 49%;
+    /* background-color: #6A737C; */
+    margin: 1% 1%;
+  }
+
+.contenedor1{
+    height: 49%;
+    /* background-color: #6A737C; */
+    margin-left: 40%;
+  }
+
+  .example-margin {
+    margin: 0 10px;
+  }
