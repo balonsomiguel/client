@@ -14,4 +14,8 @@ export class AuthService {
   public registrarCliente(user:any): Observable<any> {
     return this.http.post<any>(this.urlApi+'/registrar', user);
   }
+
+  public consultarCliente(user:any): Observable<any> {
+    return this.http.post<any>(this.urlApi+'/consultar', user);
+  }
 }
